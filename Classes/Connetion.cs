@@ -9,7 +9,7 @@ namespace NewsAPI
 {
     public abstract class Connection 
     {
-        public static async Task EstablishConnection(string search, string language)
+        public static async Task<Model> EstablishConnectionAsync(string search, string language)
             {
                 var q = search;
                 var lang = language;
@@ -26,7 +26,7 @@ namespace NewsAPI
                 var request = await myClient.GetAsync(myClient.BaseAddress);
 
                 var myModel = new Model();
-                var count = 0;
+                
 
                 if (request.IsSuccessStatusCode)
                 {
@@ -37,24 +37,9 @@ namespace NewsAPI
                 }
                 else
                 {
-                    Console.WriteLine("No funciona");
+                    Console.WriteLine("Request error");
                 }
-
-                foreach (var art in myModel.Articles) {
-                    count++;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    System.Console.WriteLine("Artículo: " + count);
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    System.Console.WriteLine(art.Title.ToUpper());
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    System.Console.WriteLine(art.Source.Name);
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    System.Console.WriteLine(art.Description);
-                    Console.ForegroundColor = ConsoleColor.White;
-                    System.Console.WriteLine(art.PublishedAt);
-                    System.Console.WriteLine(art.Content);
-                }
-
+                return myModel;
             }
     }
 }
