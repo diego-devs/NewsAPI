@@ -20,6 +20,7 @@ namespace NewsAPI
                 $"language={lang}&" +
                 $"from={from}&" +
                 "sortBy=popularity&" +
+                "pageSize=100&" +
                 "apiKey=fb86b898844247fb9b0000140cc3838c";
 
                 var myClient = new HttpClient() {BaseAddress = new Uri(url)};

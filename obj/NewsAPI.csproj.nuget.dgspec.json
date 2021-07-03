@@ -14,7 +14,7 @@
         "outputPath": "C:\\Users\\d_dia\\source\\repos\\NewsAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\d_dia\\AppData\\Roaming\\NuGet\\NuGet.Config",

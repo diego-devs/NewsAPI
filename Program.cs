@@ -9,8 +9,10 @@ namespace NewsAPI
 {
     class Program
     {
+        
         public static async Task Main(string[] args) 
         {
+            COMIENZO:
             System.Console.WriteLine("Select language (en, es, por, ita, fra, ale): ");
             var lang = Console.ReadLine();
 
@@ -32,11 +34,21 @@ namespace NewsAPI
             {
                 System.Console.WriteLine("Error connection" + n.Message);
             }
-            System.Console.WriteLine("Want to make another request? y/n");
+
+
+            System.Console.WriteLine("Want to make another search? y/n");
             var response = Console.ReadLine();
             if (response == "y") 
             {
-                
+                goto COMIENZO;
+            } 
+            else if (response == "n") 
+            {
+                Environment.Exit(0);
+            } 
+            else 
+            { 
+                Environment.Exit(0);
             }
         }
         private static void LogArticle(int count, Article art)
