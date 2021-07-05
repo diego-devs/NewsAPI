@@ -36,7 +36,7 @@ namespace NewsAPI
             }
 
 
-            System.Console.WriteLine("Want to make another search? y/n");
+            System.Console.WriteLine("Do you want to search again? y/n");
             var response = Console.ReadLine();
             if (response == "y") 
             {
