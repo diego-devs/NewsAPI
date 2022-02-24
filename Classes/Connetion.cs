@@ -33,7 +33,7 @@ namespace NewsAPI
                 {
                     var content = await request.Content.ReadAsStringAsync();             
                     var model = JsonSerializer.Deserialize<Model>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
-                    System.Console.WriteLine(model.Status + " Artículos encontrados: " +  model.Articles.Count);
+                    System.Console.WriteLine(model.Status + " Found articles: " +  model.Articles.Count);
                     myModel = model;
                 }
                 else

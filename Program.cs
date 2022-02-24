@@ -12,7 +12,7 @@ namespace NewsAPI
         
         public static async Task Main(string[] args) 
         {
-            COMIENZO:
+            START:
             System.Console.WriteLine("Select language (en, es, por, ita, fra, ale): ");
             var lang = Console.ReadLine();
 
@@ -35,12 +35,12 @@ namespace NewsAPI
                 System.Console.WriteLine("Error connection" + n.Message);
             }
 
-
-            System.Console.WriteLine("Do you want to search again? y/n");
+            RETURNANSWER:
+            System.Console.WriteLine("Search again? y/n");
             var response = Console.ReadLine();
             if (response == "y") 
             {
-                goto COMIENZO;
+                goto START;
             } 
             else if (response == "n") 
             {
@@ -48,13 +48,13 @@ namespace NewsAPI
             } 
             else 
             { 
-                Environment.Exit(0);
+                goto RETURNANSWER;
             }
         }
         private static void LogArticle(int count, Article art)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            System.Console.WriteLine("Artículo: " + count);
+            System.Console.WriteLine("Article: " + count);
             Console.ForegroundColor = ConsoleColor.Blue;
             System.Console.WriteLine(art.Title.ToUpper());
             Console.ForegroundColor = ConsoleColor.Yellow;
