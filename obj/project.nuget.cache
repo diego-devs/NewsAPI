@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "uJ7uNmOvaGGtJwjS+cER+leg4vcgb4MbrNXP1Jra8HvyR4U6bxSCDW/bmKNDiSCLKlr9AUq8cUthK4iXOifhcw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\d_dia\\source\\repos\\NewsApp\\NewsApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\d_dia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\d_dia\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

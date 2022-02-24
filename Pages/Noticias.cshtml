@@ -1,0 +1,38 @@
+﻿@page
+@model NewsApp.Pages.NoticiasModel
+@{
+    var ModelArticles = Model.Articles;
+}
+
+
+<form method="GET">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search"
+                   class="form-control"
+                   asp-for="Search" />
+            <button class="btn btn-light">Buscar</button>
+        </div>
+    </div>
+</form>
+
+@{
+    try
+    {
+        if (ModelArticles != null)
+        {
+             foreach (var art in Model.Articles)
+            {
+                
+            }
+        }
+       
+    }
+    catch (Exception e)
+    {
+        // ... 
+    }
+
+
+}
+
