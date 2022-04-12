@@ -1,0 +1,17 @@
+C:\Users\d_dia\source\repos\NewsAPI\bin\Debug\net6.0\NewsAPI.exe
+C:\Users\d_dia\source\repos\NewsAPI\bin\Debug\net6.0\NewsAPI.deps.json
+C:\Users\d_dia\source\repos\NewsAPI\bin\Debug\net6.0\NewsAPI.runtimeconfig.json
+C:\Users\d_dia\source\repos\NewsAPI\bin\Debug\net6.0\NewsAPI.dll
+C:\Users\d_dia\source\repos\NewsAPI\bin\Debug\net6.0\NewsAPI.pdb
+C:\Users\d_dia\source\repos\NewsAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.csproj.AssemblyReference.cache
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.AssemblyInfoInputs.cache
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.AssemblyInfo.cs
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.csproj.CoreCompileInputs.cache
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.csproj.CopyComplete
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.dll
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\refint\NewsAPI.dll
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.pdb
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\NewsAPI.genruntimeconfig.cache
+C:\Users\d_dia\source\repos\NewsAPI\obj\Debug\net6.0\ref\NewsAPI.dll
