@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NewsAPI
 {
-    public class Model {
+    public class Answer {
         
         public string Status { get; set; }
         public int TotalResults {get; set;}

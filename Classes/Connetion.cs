@@ -9,9 +9,9 @@ namespace NewsAPI
 {
     public abstract class Connection 
     {
-        public static async Task<Model> EstablishConnectionAsync(string search, string language)
+        public static async Task<Answer> EstablishConnectionAsync(string search, string language)
             {
-                var q = search;
+                var q = search; 
                 var lang = language;
                 var from = DateTime.Now.ToShortDateString(); // Fecha actual
                 
@@ -26,13 +26,13 @@ namespace NewsAPI
                 var myClient = new HttpClient() {BaseAddress = new Uri(url)};
                 var request = await myClient.GetAsync(myClient.BaseAddress);
 
-                var myModel = new Model();
+                var myModel = new Answer();
                 
 
                 if (request.IsSuccessStatusCode)
                 {
                     var content = await request.Content.ReadAsStringAsync();             
-                    var model = JsonSerializer.Deserialize<Model>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                    var model = JsonSerializer.Deserialize<Answer>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
                     System.Console.WriteLine(model.Status + " Found articles: " +  model.Articles.Count);
                     myModel = model;
                 }
