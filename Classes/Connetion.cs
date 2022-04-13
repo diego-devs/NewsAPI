@@ -9,7 +9,7 @@ namespace NewsAPI
 {
     public abstract class Connection 
     {
-        public static async Task<Answer> EstablishConnectionAsync(string search, string language)
+        public static async Task<ICollection<Article>> GetArticlesSearchAsync(string search, string language)
             {
                 var q = search; 
                 var lang = language;
@@ -29,18 +29,19 @@ namespace NewsAPI
                 var myModel = new Answer();
                 
 
+
                 if (request.IsSuccessStatusCode)
                 {
                     var content = await request.Content.ReadAsStringAsync();             
-                    var model = JsonSerializer.Deserialize<Answer>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
-                    System.Console.WriteLine(model.Status + " Found articles: " +  model.Articles.Count);
-                    myModel = model;
+                    myModel = JsonSerializer.Deserialize<Answer>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                    System.Console.WriteLine(myModel.Status + " Found articles: " +  myModel.Articles.Count);
                 }
                 else
                 {
                     Console.WriteLine("Request error");
                 }
-                return myModel;
+
+                return new List<Article>(myModel.Articles);
             }
     }
 }

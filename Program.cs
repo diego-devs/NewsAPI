@@ -9,10 +9,10 @@ namespace NewsAPI
 {
     class Program
     {
-        
         public static async Task Main(string[] args) 
         {
             START:
+
             System.Console.WriteLine("Select language (en, es, por, ita, fra, ale): ");
             var lang = Console.ReadLine();
 
@@ -21,9 +21,9 @@ namespace NewsAPI
             
             try
             {
-                var myArticles = await Connection.EstablishConnectionAsync(search, lang);
+                var myArticles = await Connection.GetArticlesSearchAsync(search, lang);
                 var count = 0;
-                foreach (var art in myArticles.Articles)
+                foreach (var art in myArticles)
                 {
                     count++;
                     LogArticle(count, art);
@@ -36,20 +36,23 @@ namespace NewsAPI
             }
 
             RETURNANSWER:
+
             System.Console.WriteLine("Search again? y/n");
             var response = Console.ReadLine();
             if (response == "y") 
-            {
-                goto START;
-            } 
-            else if (response == "n") 
-            {
-                Environment.Exit(0);
-            } 
-            else 
-            { 
-                goto RETURNANSWER;
-            }
+                {
+                    goto START;
+                } 
+                else if (response == "n") 
+                {
+                    Environment.Exit(0);
+                } 
+                else 
+                { 
+                    goto RETURNANSWER;
+                }
+
+           
         }
         private static void LogArticle(int count, Article art)
         {
