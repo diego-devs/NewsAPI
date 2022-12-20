@@ -28,8 +28,6 @@ namespace NewsAPI
 
                 var myModel = new Answer();
                 
-
-
                 if (request.IsSuccessStatusCode)
                 {
                     var content = await request.Content.ReadAsStringAsync();             
@@ -38,7 +36,7 @@ namespace NewsAPI
                 }
                 else
                 {
-                    Console.WriteLine("Request error");
+                    Console.WriteLine("Request error" + request.ReasonPhrase);
                 }
 
                 return new List<Article>(myModel.Articles);

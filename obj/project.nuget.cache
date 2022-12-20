@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SY4S8fOLauu2kGZefF1EAb+0xXebixXqmLgxBEZHI8nhFSkgV7IPFMsNfCJTqEz4hvGsN9Rve3EYNypgr6MGyg==",
+  "dgSpecHash": "fktvEgBXnfIlPUZ+j/Xwg/ZuY8AIYRduhtXaYFljoQPT6k1n/802/0YafBVJE4CbTEbrJAVJJabYZrtMJdj+mQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\d_dia\\source\\repos\\NewsAPI\\NewsAPI.csproj",
+  "projectFilePath": "C:\\Users\\PC Gamer\\source\\repos\\NewsAPI\\NewsAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\d_dia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\PC Gamer\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }
