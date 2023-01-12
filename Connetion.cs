@@ -9,10 +9,7 @@ namespace NewsAPI
 {
     public static class Connection 
     {
-        private static readonly HttpClient client = new (new SocketsHttpHandler 
-        {
-            PooledConnectionLifetime = TimeSpan.FromMinutes(1)
-        })  
+        private static readonly HttpClient client = new HttpClient()
         { 
             BaseAddress = new Uri("http://newsapi.org/v2/everything?") 
         };
