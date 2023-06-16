@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -8,63 +9,49 @@ using System.Threading.Tasks;
 
 namespace NewsAPI
 {
-    class Program
-    {
-        
+    public static class Program
+    {      
         public static async Task Main(string[] args) 
-        {
-            
-            START:
-
-            System.Console.WriteLine("Select language (en, es, por, ita, fra, ale): ");
-            var lang = Console.ReadLine();
-
-            System.Console.WriteLine("Search:");
-            var search = Console.ReadLine();
-
-            
-            try
+        {    
+            // ask input
+            var input = GetUserInput();
+            // make search
+            if (input != null) 
             {
-
-                var myArticles = await Connection.GetArticlesSearchAsync(search, lang);
-                if (myArticles != null)
+                try
                 {
-                    var count = 0;
-                    foreach (var article in myArticles)
+                    var myArticles = await Connection.GetArticlesSearchAsync(input[0], input[1]);
+                    if (myArticles != null)
                     {
-                        count++;
-                        Console.WriteLine(count);
-                        article.Print();
-   
+                        var count = 0;
+                        foreach (var article in myArticles)
+                        {
+                            count++;
+                            Console.WriteLine(count);
+                            article.Print();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a single article was found. Check connection.");
                     }
                 }
-                else
+                catch (System.Exception n)
                 {
-                    Console.WriteLine("Not a single article was found. Check connection.");
-                }
+                    System.Console.WriteLine("Error connection" + n.Message);
+                }    
             }
-            catch (System.Exception n)
-            {
-                System.Console.WriteLine("Error connection" + n.Message);
-            }
-
-            RETURNANSWER:
-
-            System.Console.WriteLine("Search again? y/n");
-            var response = Console.ReadLine();
-            if (response == "y") 
-            {
-                goto START;
-            } 
-            else if (response == "n") 
-            {
-                Environment.Exit(0);
-            } 
-            else 
-            { 
-                goto RETURNANSWER;
+            else {
+                Console.WriteLine("No search and a language in input");
             }
         }
-        
+        private static string[] GetUserInput() 
+        {
+            System.Console.WriteLine("Select language (en, es, por, ita, fra, ale): ");
+            var lang = Console.ReadLine();
+            System.Console.WriteLine("Search:");
+            var search = Console.ReadLine();
+            return new string[] {lang, search};
+        }
     }
 }

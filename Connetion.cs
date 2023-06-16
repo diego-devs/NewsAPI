@@ -9,11 +9,12 @@ namespace NewsAPI
 {
     public static class Connection 
     {
+        
         private static readonly HttpClient client = new HttpClient()
         { 
             BaseAddress = new Uri("http://newsapi.org/v2/everything?") 
         };
-        public static async Task<ICollection<Article>> GetArticlesSearchAsync(string search, string language)
+        public static async Task<List<Article>> GetArticlesSearchAsync(string search, string language)
         {
             var q = search; 
             var lang = language;
@@ -30,21 +31,20 @@ namespace NewsAPI
             try
             {
                 Answer answer = new();
-                HttpResponseMessage request = await client.GetAsync(endpoint);
+                string request = await client.GetStringAsync(endpoint);
 
-                if (request.IsSuccessStatusCode)
-                //if (request != null)
+                if (request != null)
                 {
-                    var content = await request.Content.ReadAsStringAsync();
-                    answer = JsonSerializer.Deserialize<Answer>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                    
+                    answer = JsonSerializer.Deserialize<Answer>(request, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
                     System.Console.WriteLine(answer.Status + " Found articles: " + answer.Articles.Count);
                     return new List<Article>(answer.Articles);
                 }
                 
                 else
                 {
-                    Console.WriteLine("Request error" + request.ReasonPhrase);
-                    // Console.WriteLine(request);
+                    Console.WriteLine("Request error" + request);
+                    Console.WriteLine(request.ToString());
                     return null;
                 }
                 
