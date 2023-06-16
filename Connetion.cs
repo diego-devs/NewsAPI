@@ -14,10 +14,10 @@ namespace NewsAPI
         { 
             BaseAddress = new Uri("http://newsapi.org/v2/everything?") 
         };
-        public static async Task<List<Article>> GetArticlesSearchAsync(string search, string language)
+        public static async Task<List<Article>> GetArticlesSearchAsync(string _lang, string _search)
         {
-            var q = search; 
-            var lang = language;
+            var q = _search; 
+            var lang = _lang;
             var from = DateTime.Now.ToShortDateString(); // Fecha actual
             var url = client.BaseAddress;
             var endpoint = url +
@@ -25,7 +25,6 @@ namespace NewsAPI
             $"language={lang}&" +
             $"from={from}&" +
             "sortBy=popularity&" +
-            "pageSize=10&" +
             "apiKey=fb86b898844247fb9b0000140cc3838c";
 
             try
