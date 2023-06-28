@@ -29,21 +29,20 @@ namespace NewsAPI
 
             try
             {
-                Answer answer = new();
-                string request = await client.GetStringAsync(endpoint);
+                var answer = new Answer();
+                var response = await client.GetStringAsync(endpoint);
 
-                if (request != null)
+                if (response != null)
                 {
-                    
-                    answer = JsonSerializer.Deserialize<Answer>(request, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                    answer = JsonSerializer.Deserialize<Answer>(response, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
                     System.Console.WriteLine(answer.Status + " Found articles: " + answer.Articles.Count);
                     return new List<Article>(answer.Articles);
                 }
                 
                 else
                 {
-                    Console.WriteLine("Request error" + request);
-                    Console.WriteLine(request.ToString());
+                    Console.WriteLine("Request error" + response);
+                    Console.WriteLine(response.ToString());
                     return null;
                 }
                 
